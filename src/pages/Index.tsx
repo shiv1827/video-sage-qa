@@ -2,6 +2,13 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
+interface FeatureProps {
+  title: string;
+  description: string;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  className?: string;
+}
+
 const Index = () => {
   const navigate = useNavigate();
 
@@ -52,18 +59,18 @@ const Index = () => {
   );
 };
 
-const features = [
+const features: FeatureProps[] = [
   {
     title: "Smart Summaries",
     description: "Get concise, accurate summaries of any YouTube video with key takeaways and insights.",
-    icon: () => (
+    icon: ({ className }) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className={className}
       >
         <path
           strokeLinecap="round"
@@ -76,14 +83,14 @@ const features = [
   {
     title: "Topic Analysis",
     description: "Discover connections between topics across multiple videos with our interactive graph.",
-    icon: () => (
+    icon: ({ className }) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className={className}
       >
         <path
           strokeLinecap="round"
@@ -96,14 +103,14 @@ const features = [
   {
     title: "Time Navigation",
     description: "Jump directly to specific moments in videos with our timestamped navigation system.",
-    icon: () => (
+    icon: ({ className }) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className={className}
       >
         <path
           strokeLinecap="round"
